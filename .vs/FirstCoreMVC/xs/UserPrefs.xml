@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{15CF408D-0F9C-4801-BA1A-C2E0AC0A3684}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FirstCoreMVC/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="FirstCoreMVC/Controllers/HomeController.cs" Line="16" Column="10" />
+      <File FileName="FirstCoreMVC/Models/Context.cs" Line="9" Column="48" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FirstCoreMVC" expanded="True">
+            <Node name="FirstCoreMVC" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.FirstCoreMVC PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

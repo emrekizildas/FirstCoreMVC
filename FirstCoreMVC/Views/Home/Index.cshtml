@@ -1,0 +1,32 @@
+﻿@model IEnumerable<FirstCoreMVC.Models.User>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Kullanıcılar
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ad</th>
+                    <th>SOyad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach(var item in Model){
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
