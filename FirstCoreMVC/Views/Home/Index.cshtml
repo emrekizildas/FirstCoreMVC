@@ -1,32 +1,30 @@
-﻿@model IEnumerable<FirstCoreMVC.Models.User>
+﻿@model IEnumerable<FirstCoreMVC.Models.Product>
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="panel panel-info">
-    <div class="panel-heading">
-        Kullanıcılar
-    </div>
-    <div class="panel-body">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Ad</th>
-                    <th>SOyad</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{
-                    foreach(var item in Model){
-                <tr>
-                    <td>@item.ID</td>
-                    <td>@item.Name</td>
-                    <td>@item.Surname</td>
-                </tr>
-                    }
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
+
+        <div class="row" style="margin-top:50px;">
+            @{
+        foreach (var Car in Model)
+        {
+            <div class="col-md-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        @Car.Name
+                    </div>
+                    <div class="panel-body text-center">
+                        <img src="@Car.ImagePath" width="240" />
+                        <br />
+                        <h3>@Car.Category.Name @Car.Name</h3>
+                        <br />
+                        <h5>@string.Format("{0:C0}", Car.Price)</h5>
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+        }
+            }
+
+        </div>

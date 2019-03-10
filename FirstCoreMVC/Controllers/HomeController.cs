@@ -10,17 +10,28 @@ namespace FirstCoreMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly Context _db;
+        public Context _db;
 
-        public HomeController(Context context)
+        public HomeController()
         {
-            _db = context;
+            _db = new Context();
         }
 
         public IActionResult Index()
         {
-            return View(_db.Users.ToList());
+            return View(_db.Products.ToList());
         }
+
+        public IActionResult Doing()
+        {
+            return View();
+        }
+
+        public IActionResult Done()
+        {
+            return View();
+        }
+
 
         public IActionResult About()
         {

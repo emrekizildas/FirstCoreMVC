@@ -18,6 +18,56 @@ namespace FirstCoreMVC.Migrations
                 .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("FirstCoreMVC.Models.Brand", b =>
+                {
+                    b.Property<int>("BrandID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("BrandID");
+
+                    b.ToTable("Brands");
+                });
+
+            modelBuilder.Entity("FirstCoreMVC.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("CategoryID");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("FirstCoreMVC.Models.Product", b =>
+                {
+                    b.Property<int>("ProductID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BrandID");
+
+                    b.Property<int>("CategoryID");
+
+                    b.Property<string>("ImagePath");
+
+                    b.Property<string>("Name");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("UnitsInStock");
+
+                    b.HasKey("ProductID");
+
+                    b.HasIndex("BrandID");
+
+                    b.HasIndex("CategoryID");
+
+                    b.ToTable("Products");
+                });
+
             modelBuilder.Entity("FirstCoreMVC.Models.User", b =>
                 {
                     b.Property<int>("ID")
@@ -30,6 +80,19 @@ namespace FirstCoreMVC.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("FirstCoreMVC.Models.Product", b =>
+                {
+                    b.HasOne("FirstCoreMVC.Models.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("FirstCoreMVC.Models.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

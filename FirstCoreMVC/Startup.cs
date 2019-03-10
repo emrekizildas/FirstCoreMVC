@@ -33,13 +33,15 @@ namespace FirstCoreMVC
                  options.MinimumSameSitePolicy = SameSiteMode.None;
              });*/
 
-            var connectionString = Configuration["DbContextSettings:ConnectionString"];
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+           
+
+           /*   var connectionString = Configuration["DbContextSettings:ConnectionString"];
             services.AddDbContext<Context>(
                 opts => opts.UseNpgsql(connectionString)
-            );
+            );*/
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             }
             
 
